@@ -9,15 +9,12 @@
 <html>
 <head>
     <title>头部</title>
-    <link href="/czjcss/headcom.css" rel="stylesheet" type="text/css">
-    <link href="/czjcss/mst.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet"
-          href="https://cdn.staticfile.org/twitter-bootstrap/4.1.0/css/bootstrap.min.css">
-    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
-    <script
-            src="https://cdn.staticfile.org/popper.js/1.12.5/umd/popper.min.js"></script>
-    <script
-            src="https://cdn.staticfile.org/twitter-bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <script src="czjcss/bootstrap/js/jquery.js"></script>
+    <link href="czjcss/headcom.css" rel="stylesheet" type="text/css">
+    <link href="czjcss/mst.css" rel="stylesheet" type="text/css">
+    <link href="czjcss/common-hash.css" rel="stylesheet" type="text/css">
+
+
 </head>
 <body>
 <header id="vip-common-header"
@@ -183,7 +180,7 @@
             <li class="wp-service wp-member" data-hover="wp-service-hover">
 				<span class="service-in"> <a href="//iclub.vip.com/"
                                              target="_blank" mars_sead="home_top_nav2_club"> 会员俱乐部 </a> <i
-                        class="ico-dis"></i>
+                        class="ico-dis" style="margin-top:13px"></i>
 			</span>
                 <div class="top-nav-dis service-infor">
                     <i class="ico-arw-bodder"></i>
@@ -346,8 +343,7 @@
             </script>
 
             <script type="text/javascript">
-                $.Var
-                    .set(
+                $.Var.set(
                         'searchPlaceholderSuggestWord',
                         {
                             "type" : 99,
@@ -357,10 +353,10 @@
             </script>
             <div class="c-logo">
                 <div class="header-logo-dop">
-                    <a target="_blank" href="//www.vip.com/"
+                    <a target="_blank" href="/getHead"
                        mars_sead="home_header_vip_logo"> <img
-                            src="//b.appsimg.com/upload/momin/2018/12/11/179/1544510175660.gif"
-                            data-original="//b.appsimg.com/upload/momin/2018/12/11/179/1544510175660.gif"
+                            src="//b.appsimg.com/2017/08/31/540/1504164551874.png"
+                            data-original="//b.appsimg.com/2017/08/31/540/1504164551874.png"
                             alt="全球精选_正品特卖" id="J-vipLogo" height="100">
                     </a>
                 </div>
@@ -371,17 +367,9 @@
 
             <div
                     class="c-service  header-vip  has-service-operation is-service-on-left">
-                <a class="c-service-link"
-                   href="//viva.vip.com/act/supportInsurance?wapid=vivac_767"
-                   mars_sead="home_header_vip1" target="_blank"></a>
                 <!--
  -->
-                <a class="c-service-link" href="//help.vip.com/commitment.php"
-                   mars_sead="home_header_vip2" target="_blank"></a>
-                <!--
- -->
-                <a class="c-service-link" href="//help.vip.com/commitment.php"
-                   mars_sead="home_header_vip3" target="_blank"></a> <img
+                <img
                     class="c-service-img  J-service-img  "
                     src="//b.appsimg.com/2017/08/31/104/1504179372347.png" width="304"
                     height="100"
@@ -399,12 +387,7 @@
                             class="link-front-icon J-link-front-icon"
                             src="//b.appsimg.com/upload/momin/2018/09/10/150/1536548648745.png"
                             data-original="//b.appsimg.com/upload/momin/2018/09/10/150/1536548648745.png">商品分类</a></li>
-                    <li><a href="//www.vip.com"
-                           class="main-nav-atag  menu-item-isbold"
-                           mars_sead="home_header_channel_homepage"><img
-                            class="link-front-icon J-link-front-icon"
-                            src="//b.appsimg.com/upload/momin/2018/11/22/139/1542896193724.gif"
-                            data-original="//b.appsimg.com/upload/momin/2018/11/22/139/1542896193724.gif">狂欢12.12</a></li>
+                    <li><a href="/getHead" target="_blank" class="main-nav-atag nav_current" mars_sead="home_header_channel_homepage">首页</a></li>
                     <li><a
                             href="https://mst.vip.com/-lddtqQhPHscDADo0h4nDQ.php?client=vipcms&amp;mst_page_type=guide&amp;mst_cdi=1&amp;wapid=mst_7415993&amp;extra_type=1&amp;extra_from_tab=1"
                             target="_blank" class="main-nav-atag "
