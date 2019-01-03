@@ -117,7 +117,7 @@ em, i {
 }
 
 html .f-hide {
-    display: none
+    display: block
 }
 
 .f-text-left {
@@ -2615,7 +2615,7 @@ div.ui-quantity {
 }
 
 .vipte, .wrap {
-    width: 1000px;
+    width: 1150px;
     margin: 0 auto
 }
 

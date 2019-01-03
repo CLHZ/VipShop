@@ -470,7 +470,7 @@
 .wp-service {
     _padding-top: 10px;
     z-index: 11;
-    width: 57px;
+    width: 70px;
     padding-left: 13px;
     padding-right: 20px;
     height: 26px;
@@ -483,17 +483,18 @@
 }
 
 .wp-service .ico-arw-bodder {
-    width: 96px;
+    width: 110px;
     left: -1px;
     background-color: #fff;
     height: 27px;
     top: -27px;
     border-left: 1px solid #cdcdcd;
-    border-top: 1px solid #cdcdcd
+    border-top: 1px solid #cdcdcd;
+    border-right: 1px solid #cdcdcd;
 }
 
 .wp-service .service-infor {
-    width: 99px;
+    width: 100px;
     text-align: left;
     top: 25px;
     left: -7px;
@@ -515,7 +516,7 @@
     width: 95px;
     left: -1px;
     background-color: #fff;
-    height: 27px;
+    height: 26px;
     top: -27px;
     border-left: 1px solid #cdcdcd;
     border-top: 1px solid #cdcdcd
@@ -545,7 +546,7 @@
 }
 
 .wp-member .service-infor {
-    width: 101px;
+    width: 95px;
     top: 25px;
     left: -7px
 }
@@ -2280,7 +2281,7 @@
     position: absolute;
     right: 0;
     top: 44px;
-    z-index: 11
+    z-index: 0;
 }
 
 .head-cart-inner, .tool-cn-inner {
@@ -2726,7 +2727,8 @@
 .nav-category-data .cate-menu .cate-menu-item:hover {
     background-color: #fff;
     color: #f10180;
-    cursor: pointer
+    cursor: pointer;
+    display: block;
 }
 
 .nav-category-data .cate-menu .cate-menu-item .menu-item-tit {
@@ -2848,21 +2850,8 @@
     display: none
 }
 
-.nav-cate-fail-load .nav-cate-data-error {
-    display: block
-}
-
 .nav-cate-fail-load .cate-part-col1, .nav-cate-fail-load .cate-part-col2 {
     display: none
-}
-
-.nav-cate-data-loading {
-    display: none;
-    top: 50%;
-    left: 50%;
-    position: absolute;
-    margin-left: -16px;
-    margin-top: -20px
 }
 
 .nav-cate-data-error {
@@ -3139,7 +3128,7 @@
 }
 
 .f-hide, .hidden {
-    display: none
+    display: none;
 }
 
 @media screen and (min-width: 1441px) {
@@ -3150,4 +3139,56 @@
     .top-notice-content {
         width: 1170px
     }
+}
+
+.slide1 {
+    background-image: url("/czjimg/1.jpg");
+}
+.slide2 {
+    background-image: url("/czjimg/2.jpg");
+}
+.slide3 {
+    background-image: url("/czjimg/3.jpg");
+}
+
+
+.main {
+    width: 1200px;
+    height: auto;
+    margin: auto;
+    overflow: hidden;
+}
+ 
+/* .nav {
+    width: 1200px;
+    height: 40px;
+}
+ 
+
+.change-li {
+    float: left;
+    width: 25%;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+} */
+ 
+.changeColor {
+    color:#f10180
+}
+ 
+.banner {
+	padding: 48px 40px 28px 40px;
+    width: auto;
+    height: 410px;
+    overflow: hidden;
+}
+ 
+.banner-slide {
+	background-color: white;
+    width: 1116px;
+    height: 390px;
+    background-repeat: no-repeat;
+    position: absolute;
+    box-shadow: 0 1px 3px #262626;
 }
