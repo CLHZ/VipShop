@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mapper.TypesMapper">
+  <resultMap id="BaseResultMap" type="com.entity.Types">
+    <id column="t_ID" jdbcType="INTEGER" property="t_ID" />
+    <result column="t_Name" jdbcType="VARCHAR" property="t_Name" />
+    <result column="t_parentID" jdbcType="INTEGER" property="t_parentID" />
+    <result column="t_Description" jdbcType="VARCHAR" property="t_Description" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    t_ID, t_Name, t_parentID, t_Description
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from types
+    where t_ID = #{t_ID,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from types
+    where t_ID = #{t_ID,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.entity.Types">
+    insert into types (t_ID, t_Name, t_parentID, 
+      t_Description)
+    values (#{t_ID,jdbcType=INTEGER}, #{t_Name,jdbcType=VARCHAR}, #{t_parentID,jdbcType=INTEGER}, 
+      #{t_Description,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.entity.Types">
+    insert into types
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="t_ID != null">
+        t_ID,
+      </if>
+      <if test="t_Name != null">
+        t_Name,
+      </if>
+      <if test="t_parentID != null">
+        t_parentID,
+      </if>
+      <if test="t_Description != null">
+        t_Description,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="t_ID != null">
+        #{t_ID,jdbcType=INTEGER},
+      </if>
+      <if test="t_Name != null">
+        #{t_Name,jdbcType=VARCHAR},
+      </if>
+      <if test="t_parentID != null">
+        #{t_parentID,jdbcType=INTEGER},
+      </if>
+      <if test="t_Description != null">
+        #{t_Description,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.entity.Types">
+    update types
+    <set>
+      <if test="t_Name != null">
+        t_Name = #{t_Name,jdbcType=VARCHAR},
+      </if>
+      <if test="t_parentID != null">
+        t_parentID = #{t_parentID,jdbcType=INTEGER},
+      </if>
+      <if test="t_Description != null">
+        t_Description = #{t_Description,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where t_ID = #{t_ID,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.entity.Types">
+    update types
+    set t_Name = #{t_Name,jdbcType=VARCHAR},
+      t_parentID = #{t_parentID,jdbcType=INTEGER},
+      t_Description = #{t_Description,jdbcType=VARCHAR}
+    where t_ID = #{t_ID,jdbcType=INTEGER}
+  </update>
+</mapper>
