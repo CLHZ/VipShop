@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mapper.BrandMapper">
+  <resultMap id="BaseResultMap" type="com.entity.Brand">
+    <id column="b_ID" jdbcType="VARCHAR" property="b_ID" />
+    <result column="b_Name" jdbcType="VARCHAR" property="b_Name" />
+    <result column="g_BID" jdbcType="VARCHAR" property="g_BID" />
+    <result column="b_Picture" jdbcType="VARCHAR" property="b_Picture" />
+    <result column="b_Discount" jdbcType="REAL" property="b_Discount" />
+    <result column="b_Tile" jdbcType="VARCHAR" property="b_Tile" />
+    <result column="b_Publish" jdbcType="VARCHAR" property="b_Publish" />
+    <collection property="goods" ofType="com.entity.Goods">
+        <id property="g_ID" column="g_ID"/>
+        <result property="g_Name" column="g_Name"/>
+        <result property="t_ID" column="t_ID"/>
+        <result property="g_Price" column="g_Price"/>
+        <result property="g_Discount" column="g_Discount"/>
+        <result property="g_Number" column="g_Number"/>
+        <result property="g_ProduceDate" column="g_ProduceDate"/>
+        <result property="g_Status" column="g_Status"/>
+        <result property="g_Image" column="g_Image"/>
+        <result property="g_Description" column="g_Description"/>
+        <result property="g_BID" column="g_BID"/>
+        
+    </collection>
+  </resultMap>
+  <sql id="Base_Column_List">
+    b_ID, b_Name, g_BID, b_Picture, b_Discount, b_Tile, b_Publish
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from brand
+    where b_ID = #{b_ID,jdbcType=VARCHAR}
+  </select>
+  <select id="getGoodsByGid" resultMap="BaseResultMap">
+      select g.g_ID,g.g_Name,g.g_Discount,g.g_Image,g.g_Price,g.g_Number,b.b_Name,g.g_BID,g.g_Description from 
+      goods as g,brand as b where  b.b_ID=#{b_Id} and g.g_ID=#{g_ID}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from brand
+    where b_ID = #{b_ID,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.entity.Brand">
+    insert into brand (b_ID, b_Name, g_BID, 
+      b_Picture, b_Discount, b_Tile, 
+      b_Publish)
+    values (#{b_ID,jdbcType=VARCHAR}, #{b_Name,jdbcType=VARCHAR}, #{g_BID,jdbcType=VARCHAR}, 
+      #{b_Picture,jdbcType=VARCHAR}, #{b_Discount,jdbcType=REAL}, #{b_Tile,jdbcType=VARCHAR}, 
+      #{b_Publish,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.entity.Brand">
+    insert into brand
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="b_ID != null">
+        b_ID,
+      </if>
+      <if test="b_Name != null">
+        b_Name,
+      </if>
+      <if test="g_BID != null">
+        g_BID,
+      </if>
+      <if test="b_Picture != null">
+        b_Picture,
+      </if>
+      <if test="b_Discount != null">
+        b_Discount,
+      </if>
+      <if test="b_Tile != null">
+        b_Tile,
+      </if>
+      <if test="b_Publish != null">
+        b_Publish,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="b_ID != null">
+        #{b_ID,jdbcType=VARCHAR},
+      </if>
+      <if test="b_Name != null">
+        #{b_Name,jdbcType=VARCHAR},
+      </if>
+      <if test="g_BID != null">
+        #{g_BID,jdbcType=VARCHAR},
+      </if>
+      <if test="b_Picture != null">
+        #{b_Picture,jdbcType=VARCHAR},
+      </if>
+      <if test="b_Discount != null">
+        #{b_Discount,jdbcType=REAL},
+      </if>
+      <if test="b_Tile != null">
+        #{b_Tile,jdbcType=VARCHAR},
+      </if>
+      <if test="b_Publish != null">
+        #{b_Publish,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.entity.Brand">
+    update brand
+    <set>
+      <if test="b_Name != null">
+        b_Name = #{b_Name,jdbcType=VARCHAR},
+      </if>
+      <if test="g_BID != null">
+        g_BID = #{g_BID,jdbcType=VARCHAR},
+      </if>
+      <if test="b_Picture != null">
+        b_Picture = #{b_Picture,jdbcType=VARCHAR},
+      </if>
+      <if test="b_Discount != null">
+        b_Discount = #{b_Discount,jdbcType=REAL},
+      </if>
+      <if test="b_Tile != null">
+        b_Tile = #{b_Tile,jdbcType=VARCHAR},
+      </if>
+      <if test="b_Publish != null">
+        b_Publish = #{b_Publish,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where b_ID = #{b_ID,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.entity.Brand">
+    update brand
+    set b_Name = #{b_Name,jdbcType=VARCHAR},
+      g_BID = #{g_BID,jdbcType=VARCHAR},
+      b_Picture = #{b_Picture,jdbcType=VARCHAR},
+      b_Discount = #{b_Discount,jdbcType=REAL},
+      b_Tile = #{b_Tile,jdbcType=VARCHAR},
+      b_Publish = #{b_Publish,jdbcType=VARCHAR}
+    where b_ID = #{b_ID,jdbcType=VARCHAR}
+  </update>
+</mapper>
