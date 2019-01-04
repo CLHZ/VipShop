@@ -1,0 +1,130 @@
+/* CSS Document */
+* html { background-image: url(about:blank); background-attachment: fixed; zoom: expression(function(ele){ ele.style.zoom = "1"; document.execCommand("BackgroundImageCache", false, true); }(this)); }
+body { font-size: 12px; font-family: "Microsoft YaHei"; color: #000; background:#fff;}
+html { overflow-y: scroll; }
+form, div, body, img, p, img, dl, dt, dd, input, h1, h2, h3, h4 { margin: 0px; padding: 0px; border: 0; }
+a { color: #333; text-decoration: none; }
+a:hover { text-decoration: none; }
+ul, li ,ol{ list-style: none; margin: 0; padding: 0; }
+input, textarea, select { color: #333; margin: 0; padding: 0; font-size: 12px; font-family: Arial; vertical-align: middle; }
+input:focus, textarea:focus { outline: none; }
+address, em, i { font-style: normal; }
+table { border-collapse: collapse; border-spacing: 0; table-layout: fixed; }
+input[type="reset"]::-moz-focus-inner, input[type="button"]::-moz-focus-inner, input[type="submit"]::-moz-focus-inner, input[type="file"] > input[type="button"]::-moz-focus-inner { border: none; padding: 0; }
+.none { float: left; width: 0; height: 0; overflow: hidden; }
+.clearfix:after { content: ""; clear: both; display: block; height: 0; }
+.clearfix { zoom: 1; }
+.FL { float: left; }
+.FR { float: right; }
+
+
+ .comment-list li .avatar img {
+        display: none;
+    }
+
+    .comment-list li .inner p {
+        color: #b3ada1;
+        float: left;
+	width: 395px;
+    }
+
+    .comment-list li .inner .meta1 {
+        float: left;
+    }
+
+        .comment-list li .inner .meta1 .time {
+            color: #b3ada1;
+        }
+
+        .comment-list li .inner .meta1 .blue {
+            float: right;
+            display: inline;
+            line-height: 14px;
+            font-size: 14px;
+            color: #75878f;
+            font-weight: bold;
+        }
+        .comment-list li .inner .meta1 .blue i{
+            display: block;
+            font-size: 12px;
+            color: #d1d1d0;
+        }
+
+
+
+
+
+
+
+.MT28{margin-top:28px;}
+.MT18{margin-top:18px;}
+.MT35{margin-top:35px;}
+.MT10{margin-top:10px;}
+.MT8{margin-top:8px;}
+.MT20{margin-top:20px;}
+
+.ML73{margin-left:73px;}
+.ML229{margin-left:229px;}
+.ML40{margin-left:40px;}
+
+.MR10{margin-right:10px;}
+.MR13{margin-right:13px;}
+.MR86{margin-right:86px;}
+.MR38{margin-right:38px;}
+
+.W1000{width:1200px;margin:0 auto;}
+.Top{line-height:18px;background:#92afd9;color:#fff;}
+.OrderBox{text-align:right;color:#fff;}
+.OrderBox a{color:#fff;margin:0 6px;}
+.OrderBox a:hover{color:#668dc4;text-decoration:underline;}
+
+.Header{width:100%;background:url(../images/OutTopBg.jpg) center bottom no-repeat;}
+.HeaderInner{position:relative;height:104px;}
+.HeaderInner h1{position:absolute;top:26px;left:490px;}
+.HeaderNav{padding-top:48px; padding-left:25px;}
+.HeaderNav li{float:left;display:inline;}
+.HeaderNav li span{display:block;color:#619fd4;font-size:14px;text-align:center;border-right:2px solid #c8ddf1;padding:0 20px;letter-spacing: 2px;}
+.HeaderNav li a span{color:#619fd4;}
+.HeaderNav li a span.S_1{font-size:14px; font-family:"Arial";}
+.HeaderNav li a span.S_2{font-size:15px;}
+.HeaderNav li a:hover span{color:#518fc4;}
+.HeaderNav li.Last span{border:none;}
+.ML330{margin-left:276px;}
+.TimeTxt{position:absolute;top:4px;right:2px;line-height:14px;color:#619fd4;font-size:12px;}
+.TimeTxt p{text-align: right;}
+
+.HTopImg{position:absolute;bottom:-14px;left:472px;}
+
+.Footer{border-top:1px solid #d4d4d4;margin-top:40px;position:relative; margin-bottom:40px;}
+.FooterInner{position:relative;}
+.Footer .fIcon{position:absolute;left:580px;bottom:94px;}
+.DingGou{margin-top:25px;margin-left:130px;}
+.DingGou p{font-size:16px;color:#a1a09f;}
+.DingGou span{display:block;font-size:16px;color:#a1a09f;}
+
+.WBox{float:left;display:inline;margin-top:20px;margin-left:160px;width:145px;}
+.WBox p{margin:6px 0;line-height:16px;color:#adadad;}
+.ImgBox img{margin-left:5px;}
+.WBImg{margin-left:90px;margin-top:15px;}
+
+.AdBox ul{margin-top:23px;}
+.AdBox li{float:left;display:inline;margin: 0px 58px;}
+.AdBox li img{display:block;width:282px;height:170px;border:1px solid #fff;}
+.AdBox li a:hover img{border:1px solid #ccc;}
+.AdBox li.Last{margin-right:0;}
+
+
+.FooterInner .ContcatTxt{float:left;display:inline;color:#e5e5e5;margin-top:27px;}
+.FooterInner .ContcatTxt a{color:#a2a2a1;margin:0 30px;}
+.ImgBox a{float:left;display:inline;}
+
+.JoinBug span{ font-size: 13px;letter-spacing: 1px;}
+body::selection
+{
+background:#3399FF;
+}
+
+body::-moz-selection
+{
+background:#3399FF;
+}

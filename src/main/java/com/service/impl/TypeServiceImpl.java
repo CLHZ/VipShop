@@ -10,7 +10,7 @@ import com.mapper.TypesMapper;
 import com.service.TypesService;
 
 @Service("typesService")
-public class TypesServiceImpl implements TypesService {
+public class TypeServiceImpl implements TypesService {
 
 	@Autowired
 	private TypesMapper typesMapper;
@@ -19,6 +19,16 @@ public class TypesServiceImpl implements TypesService {
 	public List<Types> getCateItem() {
 		return typesMapper.getCateItem();
 	}
-
+	
+	@Override
+	public List<Types> getTypesByID() {
+		
+		return typesMapper.getTypesByID();
+	}
+	@Override
+	public List<Types> getShop(Integer id) {
+		// TODO Auto-generated method stub
+		return typesMapper.getShop(id);
+	}
 
 }

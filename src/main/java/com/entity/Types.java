@@ -1,5 +1,7 @@
 package com.entity;
 
+import java.util.List;
+
 public class Types {
     private Integer t_ID;
 
@@ -8,8 +10,28 @@ public class Types {
     private Integer t_parentID;
 
     private String t_Description;
+    
+    private List<SubType> table1;
+    
+    private List<Goods> goods;
 
-    public Integer getT_ID() {
+    public List<Goods> getGoods() {
+		return goods;
+	}
+
+	public void setGoods(List<Goods> goods) {
+		this.goods = goods;
+	}
+
+	public List<SubType> getTable1() {
+		return table1;
+	}
+
+	public void setTable1(List<SubType> table1) {
+		this.table1 = table1;
+	}
+
+	public Integer getT_ID() {
         return t_ID;
     }
 
