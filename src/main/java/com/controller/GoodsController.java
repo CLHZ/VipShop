@@ -130,7 +130,6 @@ public class GoodsController {
     	System.out.println(id+","+bid);
     	List<Brand> goodsByGid = brandService.getGoodsByGid(id, bid);
     	/*System.out.println(goodsByGid.size());*/
-    	System.out.println(id);
     	 model.addAttribute("goodsByGid", goodsByGid);
     	return "q/xiangqing";
     }
