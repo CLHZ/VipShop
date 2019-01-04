@@ -115,6 +115,7 @@
 <script type="text/javascript">
 	$(function(){
 		$(".c-h-area-header").click(function(){
+			$(this).addClass("c-h-area-header");
 			$(".c-h-area-body").toggle();
 		},function () {
 			$(".c-h-area-body").toggle();
