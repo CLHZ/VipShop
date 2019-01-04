@@ -75,7 +75,7 @@
 								html += "<dd class='cate-detail-con'>";
 								for(var j = 0; j < data.length; j++){
 									if(data[j].t_parentID == data[i].t_ID){
-										html += "<a target='_blank' id='"+data[j].t_ID+"' href='Goods.htm?id="+data[j].t_ID+"&name="+data[j].t_Name+"' >"+data[j].t_Name+"</a>";
+										html += "<a target='_blank' id='"+data[j].t_ID+"' href='${pageContext.request.contextPath}/hth/Goods.htm?id="+data[j].t_ID+"&name="+data[j].t_Name+"' >"+data[j].t_Name+"</a>";
 										$(".typelink").click(function () {
 											$(this).attr("href","");
 										});
