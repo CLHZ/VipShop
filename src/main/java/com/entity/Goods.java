@@ -1,6 +1,7 @@
 package com.entity;
 
 import java.util.Date;
+<<<<<<< HEAD
 import java.util.List;
 
 public class Goods {
@@ -37,6 +38,33 @@ public class Goods {
 	}
 
 	public Integer getG_ID() {
+=======
+
+public class Goods {
+    private Integer g_ID;
+
+    private String g_Name;
+
+    private Integer t_ID;
+
+    private Float g_Price;
+
+    private Float g_Discount;
+
+    private Integer g_Number;
+
+    private Date g_ProduceDate;
+
+    private String g_Image;
+
+    private String g_Status;
+
+    private String g_Description;
+
+    private String g_BID;
+
+    public Integer getG_ID() {
+>>>>>>> branch 'master' of https://github.com/CLHZ/VipShop.git
         return g_ID;
     }
 

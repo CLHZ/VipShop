@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mapper.TypesMapper">
+  <resultMap id="BaseResultMap" type="com.entity.Types">
+    <id column="t_ID" jdbcType="INTEGER" property="t_ID" />
+    <result column="t_Name" jdbcType="VARCHAR" property="t_Name" />
+    <result column="t_parentID" jdbcType="INTEGER" property="t_parentID" />
+    <collection property="table1" ofType="com.entity.SubType">
+    <id column="t_ID1" jdbcType="INTEGER" property="t_ID" />
+     <result column="t_Name1" jdbcType="VARCHAR" property="t_Name" />
+     <result column="t_parentID1" jdbcType="INTEGER" property="t_parentID" />
+    </collection>
+    <collection property="goods" ofType="com.entity.Goods">
+    	<id column="g_ID" jdbcType="INTEGER" property="g_ID" />
+    	<result column="g_Name" jdbcType="VARCHAR" property="g_Name"/>
+    	<result column="t_ID" jdbcType="VARCHAR" property="t_ID"/>
+    	<result column="g_Price" jdbcType="VARCHAR" property="g_Price"/>
+    </collection>
+  </resultMap>
+  
+  <select id="getTypesByID" resultMap="BaseResultMap" >
+    SELECT p.t_Name,p.t_parentID,p.t_ID,s.t_Name AS t_Name1,s.t_parentID AS t_parentID1,s.t_ID AS t_ID1 FROM `types` AS p
+	LEFT JOIN `types` AS s
+	ON s.t_parentID=p.t_ID
+	WHERE p.t_parentID =0
+  </select>
+  
+  <select id="getShop" resultMap="BaseResultMap">
+  	SELECT p.t_Name,p.t_ID,g.g_Name AS g_Name FROM `types` AS p INNER JOIN 
+	goods AS g ON g.t_ID = p.t_ID
+	WHERE p.t_parentID = #{t_ID}
+  </select>
+  <sql id="Base_Column_List">
+    t_ID, t_Name, t_parentID, t_Description
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from types
+    where t_ID = #{t_ID,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from types
+    where t_ID = #{t_ID,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.entity.Types">
+    insert into types (t_ID, t_Name, t_parentID, 
+      t_Description)
+    values (#{t_ID,jdbcType=INTEGER}, #{t_Name,jdbcType=VARCHAR}, #{t_parentID,jdbcType=INTEGER}, 
+      #{t_Description,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.entity.Types">
+    insert into types
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="t_ID != null">
+        t_ID,
+      </if>
+      <if test="t_Name != null">
+        t_Name,
+      </if>
+      <if test="t_parentID != null">
+        t_parentID,
+      </if>
+      <if test="t_Description != null">
+        t_Description,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="t_ID != null">
+        #{t_ID,jdbcType=INTEGER},
+      </if>
+      <if test="t_Name != null">
+        #{t_Name,jdbcType=VARCHAR},
+      </if>
+      <if test="t_parentID != null">
+        #{t_parentID,jdbcType=INTEGER},
+      </if>
+      <if test="t_Description != null">
+        #{t_Description,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.entity.Types">
+    update types
+    <set>
+      <if test="t_Name != null">
+        t_Name = #{t_Name,jdbcType=VARCHAR},
+      </if>
+      <if test="t_parentID != null">
+        t_parentID = #{t_parentID,jdbcType=INTEGER},
+      </if>
+      <if test="t_Description != null">
+        t_Description = #{t_Description,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where t_ID = #{t_ID,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.entity.Types">
+    update types
+    set t_Name = #{t_Name,jdbcType=VARCHAR},
+      t_parentID = #{t_parentID,jdbcType=INTEGER},
+      t_Description = #{t_Description,jdbcType=VARCHAR}
+    where t_ID = #{t_ID,jdbcType=INTEGER}
+  </update>
+</mapper>

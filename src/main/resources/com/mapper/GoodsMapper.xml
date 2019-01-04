@@ -24,6 +24,7 @@
     from goods
     where g_ID = #{g_ID,jdbcType=INTEGER}
   </select>
+<<<<<<< HEAD
   <select id="getGoodsByName" parameterType="com.entity.Goods" resultMap="BaseResultMap">
       select g_ID,g_Name,g_Price,g_Discount,g_Image from goods where 
       <if test="g_Name != ''">
@@ -33,6 +34,8 @@
         g_BID = #{g_BID}
       </if>
   </select>
+=======
+>>>>>>> branch 'master' of https://github.com/CLHZ/VipShop.git
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from goods
     where g_ID = #{g_ID,jdbcType=INTEGER}
