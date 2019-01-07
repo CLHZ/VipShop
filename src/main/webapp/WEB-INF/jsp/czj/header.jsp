@@ -59,12 +59,15 @@
 		for(var i = 0; i < catemenu.length; i++){
 			catemenu[i].index=i;  
 			catemenu[i].onmouseover = function(){
+				var item1 = $(this).text().trim();
+				
 				var html = "";
 				var id = this.index+1;
 				var length=0;
 				$.ajax({
 					type : "post",
 					url : "getcateitem.htm",
+					aynsc : true,
 					data : {"id":id},
 					success : function(data){
 						for(var i = 0; i < data.length; i++){
@@ -75,10 +78,7 @@
 								html += "<dd class='cate-detail-con'>";
 								for(var j = 0; j < data.length; j++){
 									if(data[j].t_parentID == data[i].t_ID){
-										html += "<a target='_blank' id='"+data[j].t_ID+"' href='${pageContext.request.contextPath}/hth/Goods.htm?id="+data[j].t_ID+"&name="+data[j].t_Name+"' >"+data[j].t_Name+"</a>";
-										$(".typelink").click(function () {
-											$(this).attr("href","");
-										});
+										html += "<a target='_blank' id='"+data[j].t_ID+"' href='${pageContext.request.contextPath}/hth/Goods.htm?id="+data[j].t_ID+"&name="+data[j].t_Name+"&item="+item1+","+data[i].t_Name+"'>"+data[j].t_Name+"</a>";
 									}
 								}
 								html += "</dd></dl>";
