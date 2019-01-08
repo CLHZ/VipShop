@@ -18,7 +18,7 @@ import com.service.GoodsService;
 @Controller
 @RequestMapping("/hth")
 public class GoodsController {
-
+//aaa
 	@Autowired
 	private GoodsService goodsService;
 	
