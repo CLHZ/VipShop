@@ -18,7 +18,7 @@ import com.service.GoodsService;
 @Controller
 @RequestMapping("/hth")
 public class GoodsController {
-
+//aaa
 	@Autowired
 	private GoodsService goodsService;
 	
@@ -26,8 +26,14 @@ public class GoodsController {
 	private BrandService brandService;
 	
 	@RequestMapping("/Goods.htm")
-	public String Goods(Integer id,String name,Model model,Integer currentPageNo) {
-		System.out.println(name+""+id);
+	public String Goods(Integer id,String name,String item,Model model,Integer currentPageNo) {
+		String itemI = item+","+name;
+		String[] itemi = itemI.split(",");
+		model.addAttribute("itemi", itemi);
+		for (int i = 0; i < itemi.length; i++) {
+			System.out.println(itemi[i]);
+		}
+		
 		List<Goods> goodsNameById = goodsService.getGoodsNameById(id, name);
     	List<Brand> brand = brandService.getBrand();
     	if(currentPageNo == null) {

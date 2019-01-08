@@ -12,6 +12,7 @@
 <script type="text/javascript" src="/js/jquery-1.8.3.js"></script>
 </head>
 <body>
+<!-- 推测试 -->
 	<div class="g-wrap">
 		<!-- 面包屑 -->
 		<div class="m-cat-site J_catSite" id="J_catSite">
@@ -22,14 +23,14 @@
 							class="breadcrumb-item J_revokeAll_dom " data-revokeurl="Array"
 							title="商品分类" mars_sead="te_onsale_filterlist_cathome_btn">
 							商品分类 </a> <i class="breadcrumb-step-icon vipFont"></i> <a
-							href="#J_catSite" class="breadcrumb-item  " title="女装/男装/内衣"
-							mars_sead="te_onsale_filterlist_sort1_btn"> 女装/男装/内衣 </a> <i
+							href="#J_catSite" class="breadcrumb-item  " title="${itemi[0]}"
+							mars_sead="te_onsale_filterlist_sort1_btn"> ${itemi[0]} </a> <i
 							class="breadcrumb-step-icon vipFont"></i> <a href="#J_catSite"
-							class="breadcrumb-item  " title="人气美衣"
-							mars_sead="te_onsale_filterlist_sort2_btn"> 人气美衣 </a> <i
+							class="breadcrumb-item  " title="${itemi[1]}"
+							mars_sead="te_onsale_filterlist_sort2_btn"> ${itemi[1]} </a> <i
 							class="breadcrumb-step-icon vipFont"></i> <a href="#J_catSite"
 							class="breadcrumb-item cat-secluded-current J_cat_secluded "
-							title="T恤" mars_sead="te_onsale_filterlist_sort3_btn">T恤 </a>
+							title="T恤" mars_sead="te_onsale_filterlist_sort3_btn">${itemi[2]} </a>
 					</div>
 				</div>
 			</div>
