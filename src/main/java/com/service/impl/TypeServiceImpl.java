@@ -14,6 +14,11 @@ public class TypeServiceImpl implements TypesService {
 
 	@Autowired
 	private TypesMapper typesMapper;
+
+	@Override
+	public List<Types> getCateItem() {
+		return typesMapper.getCateItem();
+	}
 	
 	@Override
 	public List<Types> getTypesByID() {

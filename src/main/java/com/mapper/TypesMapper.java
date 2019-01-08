@@ -21,6 +21,10 @@ public interface TypesMapper {
     int updateByPrimaryKeySelective(Types record);
 
     int updateByPrimaryKey(Types record);
+    
+    @Select("select t_ID, t_Name, t_parentID, t_Description from types")
+    List<Types> getCateItem();
+    
     //栏目分类
     List<Types> getTypesByID();
     

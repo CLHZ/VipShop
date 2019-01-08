@@ -21,7 +21,6 @@
         <result property="g_Image" column="g_Image"/>
         <result property="g_Description" column="g_Description"/>
         <result property="g_BID" column="g_BID"/>
-        
     </collection>
   </resultMap>
   <sql id="Base_Column_List">

@@ -1,5 +1,9 @@
 package com.mapper;
 
+
+import org.apache.ibatis.annotations.Mapper;
+
+import com.entity.Brand;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
