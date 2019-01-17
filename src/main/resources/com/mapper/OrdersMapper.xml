@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mapper.OrdersMapper">
+  <resultMap id="BaseResultMap" type="com.entity.Orders">
+    <id column="o_ID" jdbcType="CHAR" property="o_ID" />
+    <result column="u_ID" jdbcType="INTEGER" property="u_ID" />
+    <result column="o_Date" jdbcType="TIMESTAMP" property="o_Date" />
+    <result column="o_Sum" jdbcType="REAL" property="o_Sum" />
+    <result column="o_SendMode" jdbcType="VARCHAR" property="o_SendMode" />
+    <result column="o_Status" jdbcType="VARCHAR" property="o_Status" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    o_ID, u_ID, o_Date, o_Sum, o_SendMode, o_Status
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from orders
+    where o_ID = #{o_ID,jdbcType=CHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from orders
+    where o_ID = #{o_ID,jdbcType=CHAR}
+  </delete>
+  <insert id="insert" parameterType="com.entity.Orders">
+    insert into orders (o_ID, u_ID, o_Date, 
+      o_Sum, o_SendMode, o_Status
+      )
+    values (#{o_ID,jdbcType=CHAR}, #{u_ID,jdbcType=INTEGER}, #{o_Date,jdbcType=TIMESTAMP}, 
+      #{o_Sum,jdbcType=REAL}, #{o_SendMode,jdbcType=VARCHAR}, #{o_Status,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.entity.Orders">
+    insert into orders
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="o_ID != null">
+        o_ID,
+      </if>
+      <if test="u_ID != null">
+        u_ID,
+      </if>
+      <if test="o_Date != null">
+        o_Date,
+      </if>
+      <if test="o_Sum != null">
+        o_Sum,
+      </if>
+      <if test="o_SendMode != null">
+        o_SendMode,
+      </if>
+      <if test="o_Status != null">
+        o_Status,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="o_ID != null">
+        #{o_ID,jdbcType=CHAR},
+      </if>
+      <if test="u_ID != null">
+        #{u_ID,jdbcType=INTEGER},
+      </if>
+      <if test="o_Date != null">
+        #{o_Date,jdbcType=TIMESTAMP},
+      </if>
+      <if test="o_Sum != null">
+        #{o_Sum,jdbcType=REAL},
+      </if>
+      <if test="o_SendMode != null">
+        #{o_SendMode,jdbcType=VARCHAR},
+      </if>
+      <if test="o_Status != null">
+        #{o_Status,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.entity.Orders">
+    update orders
+    <set>
+      <if test="u_ID != null">
+        u_ID = #{u_ID,jdbcType=INTEGER},
+      </if>
+      <if test="o_Date != null">
+        o_Date = #{o_Date,jdbcType=TIMESTAMP},
+      </if>
+      <if test="o_Sum != null">
+        o_Sum = #{o_Sum,jdbcType=REAL},
+      </if>
+      <if test="o_SendMode != null">
+        o_SendMode = #{o_SendMode,jdbcType=VARCHAR},
+      </if>
+      <if test="o_Status != null">
+        o_Status = #{o_Status,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where o_ID = #{o_ID,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.entity.Orders">
+    update orders
+    set u_ID = #{u_ID,jdbcType=INTEGER},
+      o_Date = #{o_Date,jdbcType=TIMESTAMP},
+      o_Sum = #{o_Sum,jdbcType=REAL},
+      o_SendMode = #{o_SendMode,jdbcType=VARCHAR},
+      o_Status = #{o_Status,jdbcType=VARCHAR}
+    where o_ID = #{o_ID,jdbcType=CHAR}
+  </update>
+</mapper>

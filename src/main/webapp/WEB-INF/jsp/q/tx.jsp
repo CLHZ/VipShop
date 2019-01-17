@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>商品</title>
 <link href="/css/common-hash.css" rel="stylesheet" type="text/css">
 <link href="/css/tx1.css" rel="stylesheet" type="text/css">
 <script type="text/javascript" src="/js/jquery-1.8.3.js"></script>
@@ -2089,7 +2089,7 @@
 						<div class="goods-image">
 							<a href="getGoodsByGid.htm?id=${g.g_ID}&bid=${g.g_BID}" class="goods-image-link" title="${g.g_Name}"
 								mars_sead="te_onsale_filterlist_list_img9" target="_blank"
-								rel="noopener"> <img id="J_pic_707404407" src="image/title.png"
+								rel="noopener"> <img id="J_pic_707404407" src="//a.vpimg3.com/upload/merchandise/pdcvis/2018/07/06/71/3a417f38-f19f-4249-8a35-c40cab5380f8_64x64_90.jpg"
 								data-img-type="5" data-original="${g.g_Image}"
 								class="J_img goods-image-img" width="235" height="297" alt=""
 								data-img-back="" data-img-side="" data-img-back-s=""

@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mapper.AddressMapper">
+  <resultMap id="BaseResultMap" type="com.entity.Address">
+    <id column="a_ID" jdbcType="INTEGER" property="a_ID" />
+    <result column="u_ID" jdbcType="INTEGER" property="u_ID" />
+    <result column="a_name" jdbcType="VARCHAR" property="a_name" />
+    <result column="a_mobile" jdbcType="VARCHAR" property="a_mobile" />
+    <result column="a_phone" jdbcType="VARCHAR" property="a_phone" />
+    <result column="a_province" jdbcType="VARCHAR" property="a_province" />
+    <result column="a_city" jdbcType="VARCHAR" property="a_city" />
+    <result column="a_district" jdbcType="VARCHAR" property="a_district" />
+    <result column="a_address" jdbcType="VARCHAR" property="a_address" />
+    <result column="a_createtime" jdbcType="TIMESTAMP" property="a_createtime" />
+    <result column="a_updatetime" jdbcType="TIMESTAMP" property="a_updatetime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    a_ID, u_ID, a_name, a_mobile, a_phone, a_province, a_city, a_district, a_address, 
+    a_createtime, a_updatetime
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from address
+    where a_ID = #{a_ID,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from address
+    where a_ID = #{a_ID,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.entity.Address">
+    insert into address (a_ID, u_ID, a_name, 
+      a_mobile, a_phone, a_province, 
+      a_city, a_district, a_address, 
+      a_createtime, a_updatetime)
+    values (#{a_ID,jdbcType=INTEGER}, #{u_ID,jdbcType=INTEGER}, #{a_name,jdbcType=VARCHAR}, 
+      #{a_mobile,jdbcType=VARCHAR}, #{a_phone,jdbcType=VARCHAR}, #{a_province,jdbcType=VARCHAR}, 
+      #{a_city,jdbcType=VARCHAR}, #{a_district,jdbcType=VARCHAR}, #{a_address,jdbcType=VARCHAR}, 
+      #{a_createtime,jdbcType=TIMESTAMP}, #{a_updatetime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.entity.Address">
+    insert into address
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="a_ID != null">
+        a_ID,
+      </if>
+      <if test="u_ID != null">
+        u_ID,
+      </if>
+      <if test="a_name != null">
+        a_name,
+      </if>
+      <if test="a_mobile != null">
+        a_mobile,
+      </if>
+      <if test="a_phone != null">
+        a_phone,
+      </if>
+      <if test="a_province != null">
+        a_province,
+      </if>
+      <if test="a_city != null">
+        a_city,
+      </if>
+      <if test="a_district != null">
+        a_district,
+      </if>
+      <if test="a_address != null">
+        a_address,
+      </if>
+      <if test="a_createtime != null">
+        a_createtime,
+      </if>
+      <if test="a_updatetime != null">
+        a_updatetime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="a_ID != null">
+        #{a_ID,jdbcType=INTEGER},
+      </if>
+      <if test="u_ID != null">
+        #{u_ID,jdbcType=INTEGER},
+      </if>
+      <if test="a_name != null">
+        #{a_name,jdbcType=VARCHAR},
+      </if>
+      <if test="a_mobile != null">
+        #{a_mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="a_phone != null">
+        #{a_phone,jdbcType=VARCHAR},
+      </if>
+      <if test="a_province != null">
+        #{a_province,jdbcType=VARCHAR},
+      </if>
+      <if test="a_city != null">
+        #{a_city,jdbcType=VARCHAR},
+      </if>
+      <if test="a_district != null">
+        #{a_district,jdbcType=VARCHAR},
+      </if>
+      <if test="a_address != null">
+        #{a_address,jdbcType=VARCHAR},
+      </if>
+      <if test="a_createtime != null">
+        #{a_createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="a_updatetime != null">
+        #{a_updatetime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.entity.Address">
+    update address
+    <set>
+      <if test="u_ID != null">
+        u_ID = #{u_ID,jdbcType=INTEGER},
+      </if>
+      <if test="a_name != null">
+        a_name = #{a_name,jdbcType=VARCHAR},
+      </if>
+      <if test="a_mobile != null">
+        a_mobile = #{a_mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="a_phone != null">
+        a_phone = #{a_phone,jdbcType=VARCHAR},
+      </if>
+      <if test="a_province != null">
+        a_province = #{a_province,jdbcType=VARCHAR},
+      </if>
+      <if test="a_city != null">
+        a_city = #{a_city,jdbcType=VARCHAR},
+      </if>
+      <if test="a_district != null">
+        a_district = #{a_district,jdbcType=VARCHAR},
+      </if>
+      <if test="a_address != null">
+        a_address = #{a_address,jdbcType=VARCHAR},
+      </if>
+      <if test="a_createtime != null">
+        a_createtime = #{a_createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="a_updatetime != null">
+        a_updatetime = #{a_updatetime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where a_ID = #{a_ID,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.entity.Address">
+    update address
+    set u_ID = #{u_ID,jdbcType=INTEGER},
+      a_name = #{a_name,jdbcType=VARCHAR},
+      a_mobile = #{a_mobile,jdbcType=VARCHAR},
+      a_phone = #{a_phone,jdbcType=VARCHAR},
+      a_province = #{a_province,jdbcType=VARCHAR},
+      a_city = #{a_city,jdbcType=VARCHAR},
+      a_district = #{a_district,jdbcType=VARCHAR},
+      a_address = #{a_address,jdbcType=VARCHAR},
+      a_createtime = #{a_createtime,jdbcType=TIMESTAMP},
+      a_updatetime = #{a_updatetime,jdbcType=TIMESTAMP}
+    where a_ID = #{a_ID,jdbcType=INTEGER}
+  </update>
+</mapper>

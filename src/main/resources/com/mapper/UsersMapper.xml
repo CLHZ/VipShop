@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mapper.UsersMapper">
+  <resultMap id="BaseResultMap" type="com.entity.Users">
+    <id column="u_ID" jdbcType="INTEGER" property="u_ID" />
+    <result column="u_Name" jdbcType="VARCHAR" property="u_Name" />
+    <result column="u_TureName" jdbcType="VARCHAR" property="u_TureName" />
+    <result column="u_Gender" jdbcType="CHAR" property="u_Gender" />
+    <result column="u_Birth" jdbcType="TIMESTAMP" property="u_Birth" />
+    <result column="u_CardID" jdbcType="VARCHAR" property="u_CardID" />
+    <result column="u_Address" jdbcType="VARCHAR" property="u_Address" />
+    <result column="u_Posecode" jdbcType="VARCHAR" property="u_Posecode" />
+    <result column="u_Mobile" jdbcType="VARCHAR" property="u_Mobile" />
+    <result column="u_Phone" jdbcType="VARCHAR" property="u_Phone" />
+    <result column="u_Email" jdbcType="VARCHAR" property="u_Email" />
+    <result column="u_Password" jdbcType="VARCHAR" property="u_Password" />
+    <result column="u_SafeCode" jdbcType="CHAR" property="u_SafeCode" />
+    <result column="u_QuesCode" jdbcType="VARCHAR" property="u_QuesCode" />
+    <result column="u_Answer" jdbcType="VARCHAR" property="u_Answer" />
+    <result column="u_Type" jdbcType="VARCHAR" property="u_Type" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    u_ID, u_Name, u_TureName, u_Gender, u_Birth, u_CardID, u_Address, u_Posecode, u_Mobile, 
+    u_Phone, u_Email, u_Password, u_SafeCode, u_QuesCode, u_Answer, u_Type
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from users
+    where u_ID = #{u_ID,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from users
+    where u_ID = #{u_ID,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.entity.Users">
+    insert into users (u_ID, u_Name, u_TureName, 
+      u_Gender, u_Birth, u_CardID, 
+      u_Address, u_Posecode, u_Mobile, 
+      u_Phone, u_Email, u_Password, 
+      u_SafeCode, u_QuesCode, u_Answer, 
+      u_Type)
+    values (#{u_ID,jdbcType=INTEGER}, #{u_Name,jdbcType=VARCHAR}, #{u_TureName,jdbcType=VARCHAR}, 
+      #{u_Gender,jdbcType=CHAR}, #{u_Birth,jdbcType=TIMESTAMP}, #{u_CardID,jdbcType=VARCHAR}, 
+      #{u_Address,jdbcType=VARCHAR}, #{u_Posecode,jdbcType=VARCHAR}, #{u_Mobile,jdbcType=VARCHAR}, 
+      #{u_Phone,jdbcType=VARCHAR}, #{u_Email,jdbcType=VARCHAR}, #{u_Password,jdbcType=VARCHAR}, 
+      #{u_SafeCode,jdbcType=CHAR}, #{u_QuesCode,jdbcType=VARCHAR}, #{u_Answer,jdbcType=VARCHAR}, 
+      #{u_Type,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.entity.Users">
+    insert into users
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="u_ID != null">
+        u_ID,
+      </if>
+      <if test="u_Name != null">
+        u_Name,
+      </if>
+      <if test="u_TureName != null">
+        u_TureName,
+      </if>
+      <if test="u_Gender != null">
+        u_Gender,
+      </if>
+      <if test="u_Birth != null">
+        u_Birth,
+      </if>
+      <if test="u_CardID != null">
+        u_CardID,
+      </if>
+      <if test="u_Address != null">
+        u_Address,
+      </if>
+      <if test="u_Posecode != null">
+        u_Posecode,
+      </if>
+      <if test="u_Mobile != null">
+        u_Mobile,
+      </if>
+      <if test="u_Phone != null">
+        u_Phone,
+      </if>
+      <if test="u_Email != null">
+        u_Email,
+      </if>
+      <if test="u_Password != null">
+        u_Password,
+      </if>
+      <if test="u_SafeCode != null">
+        u_SafeCode,
+      </if>
+      <if test="u_QuesCode != null">
+        u_QuesCode,
+      </if>
+      <if test="u_Answer != null">
+        u_Answer,
+      </if>
+      <if test="u_Type != null">
+        u_Type,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="u_ID != null">
+        #{u_ID,jdbcType=INTEGER},
+      </if>
+      <if test="u_Name != null">
+        #{u_Name,jdbcType=VARCHAR},
+      </if>
+      <if test="u_TureName != null">
+        #{u_TureName,jdbcType=VARCHAR},
+      </if>
+      <if test="u_Gender != null">
+        #{u_Gender,jdbcType=CHAR},
+      </if>
+      <if test="u_Birth != null">
+        #{u_Birth,jdbcType=TIMESTAMP},
+      </if>
+      <if test="u_CardID != null">
+        #{u_CardID,jdbcType=VARCHAR},
+      </if>
+      <if test="u_Address != null">
+        #{u_Address,jdbcType=VARCHAR},
+      </if>
+      <if test="u_Posecode != null">
+        #{u_Posecode,jdbcType=VARCHAR},
+      </if>
+      <if test="u_Mobile != null">
+        #{u_Mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="u_Phone != null">
+        #{u_Phone,jdbcType=VARCHAR},
+      </if>
+      <if test="u_Email != null">
+        #{u_Email,jdbcType=VARCHAR},
+      </if>
+      <if test="u_Password != null">
+        #{u_Password,jdbcType=VARCHAR},
+      </if>
+      <if test="u_SafeCode != null">
+        #{u_SafeCode,jdbcType=CHAR},
+      </if>
+      <if test="u_QuesCode != null">
+        #{u_QuesCode,jdbcType=VARCHAR},
+      </if>
+      <if test="u_Answer != null">
+        #{u_Answer,jdbcType=VARCHAR},
+      </if>
+      <if test="u_Type != null">
+        #{u_Type,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.entity.Users">
+    update users
+    <set>
+      <if test="u_Name != null">
+        u_Name = #{u_Name,jdbcType=VARCHAR},
+      </if>
+      <if test="u_TureName != null">
+        u_TureName = #{u_TureName,jdbcType=VARCHAR},
+      </if>
+      <if test="u_Gender != null">
+        u_Gender = #{u_Gender,jdbcType=CHAR},
+      </if>
+      <if test="u_Birth != null">
+        u_Birth = #{u_Birth,jdbcType=TIMESTAMP},
+      </if>
+      <if test="u_CardID != null">
+        u_CardID = #{u_CardID,jdbcType=VARCHAR},
+      </if>
+      <if test="u_Address != null">
+        u_Address = #{u_Address,jdbcType=VARCHAR},
+      </if>
+      <if test="u_Posecode != null">
+        u_Posecode = #{u_Posecode,jdbcType=VARCHAR},
+      </if>
+      <if test="u_Mobile != null">
+        u_Mobile = #{u_Mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="u_Phone != null">
+        u_Phone = #{u_Phone,jdbcType=VARCHAR},
+      </if>
+      <if test="u_Email != null">
+        u_Email = #{u_Email,jdbcType=VARCHAR},
+      </if>
+      <if test="u_Password != null">
+        u_Password = #{u_Password,jdbcType=VARCHAR},
+      </if>
+      <if test="u_SafeCode != null">
+        u_SafeCode = #{u_SafeCode,jdbcType=CHAR},
+      </if>
+      <if test="u_QuesCode != null">
+        u_QuesCode = #{u_QuesCode,jdbcType=VARCHAR},
+      </if>
+      <if test="u_Answer != null">
+        u_Answer = #{u_Answer,jdbcType=VARCHAR},
+      </if>
+      <if test="u_Type != null">
+        u_Type = #{u_Type,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where u_ID = #{u_ID,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.entity.Users">
+    update users
+    set u_Name = #{u_Name,jdbcType=VARCHAR},
+      u_TureName = #{u_TureName,jdbcType=VARCHAR},
+      u_Gender = #{u_Gender,jdbcType=CHAR},
+      u_Birth = #{u_Birth,jdbcType=TIMESTAMP},
+      u_CardID = #{u_CardID,jdbcType=VARCHAR},
+      u_Address = #{u_Address,jdbcType=VARCHAR},
+      u_Posecode = #{u_Posecode,jdbcType=VARCHAR},
+      u_Mobile = #{u_Mobile,jdbcType=VARCHAR},
+      u_Phone = #{u_Phone,jdbcType=VARCHAR},
+      u_Email = #{u_Email,jdbcType=VARCHAR},
+      u_Password = #{u_Password,jdbcType=VARCHAR},
+      u_SafeCode = #{u_SafeCode,jdbcType=CHAR},
+      u_QuesCode = #{u_QuesCode,jdbcType=VARCHAR},
+      u_Answer = #{u_Answer,jdbcType=VARCHAR},
+      u_Type = #{u_Type,jdbcType=VARCHAR}
+    where u_ID = #{u_ID,jdbcType=INTEGER}
+  </update>
+</mapper>
