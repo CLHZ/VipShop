@@ -47,11 +47,11 @@
 						<script type="text/javascript">
 							$(function(){
 								var hight = $("#brandlist").height();
-								
 								$.ajax({
 									type:"post",
 									url:"brandmanage.htm",
-									success:(data)=>{
+									success:function(data){
+										console.log(data);
 										var html = "";	
 										var list = "<table>";
 										var dy = 0;
@@ -220,10 +220,10 @@
 		            data : {fil:fil},    
 		            //processData: false,   用FormData传fd时需有这两项    
 		            //contentType: false,    
-		            success : function(){    
+		            success : ()=>{    
 		            	$(".bname").text("");
 		                	alert("品牌添加成功！");
-		          　		}
+		          }
 		        });  
 			}    
 	    }

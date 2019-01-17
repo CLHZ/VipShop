@@ -17,7 +17,6 @@ public class BrandServiceImpl implements BrandService {
 	
 	@Override
 	public List<Brand> getBrand() {
-		// TODO Auto-generated method stub
 		return brandMapper.getBrand();
 	}
 

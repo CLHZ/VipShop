@@ -34,6 +34,8 @@ public class TypesController {
 	
 	@Autowired
 	private OrdersService ordersService;
+	
+	@Autowired
 	private BrandService brandService;
 	
 	/**
