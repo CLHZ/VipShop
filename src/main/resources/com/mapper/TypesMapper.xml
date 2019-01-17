@@ -5,12 +5,11 @@
     <id column="t_ID" jdbcType="INTEGER" property="t_ID" />
     <result column="t_Name" jdbcType="VARCHAR" property="t_Name" />
     <result column="t_parentID" jdbcType="INTEGER" property="t_parentID" />
-  
-    <collection property="goods" ofType="com.entity.Goods">
-    	<id column="g_ID" jdbcType="INTEGER" property="g_ID" />
-    	<result column="g_Name" jdbcType="VARCHAR" property="g_Name"/>
-    	<result column="t_ID" jdbcType="VARCHAR" property="t_ID"/>
-    	<result column="g_Price" jdbcType="VARCHAR" property="g_Price"/>
+     
+    <collection property="table1" ofType="com.entity.SubType">
+    <id column="t_ID1" jdbcType="INTEGER" property="t_ID" />
+     <result column="t_Name1" jdbcType="VARCHAR" property="t_Name" />
+     <result column="t_parentID1" jdbcType="INTEGER" property="t_parentID" />
     </collection>
     
       <collection property="table1" ofType="com.entity.SubType">
@@ -27,11 +26,11 @@
 	WHERE p.t_parentID =0
   </select>
   
-  <select id="getShop" resultMap="BaseResultMap">
-  	SELECT p.t_Name,p.t_ID,g.g_Name AS g_Name FROM `types` AS p INNER JOIN 
+  <!-- <select id="getShop" resultMap="BaseResultMap">
+  	SELECT p.t_Name,p.t_ID,g.g_Name AS g_Name,g.g_Status,g.g_Price,g.g_Discount FROM `types` AS p INNER JOIN 
 	goods AS g ON g.t_ID = p.t_ID
 	WHERE p.t_parentID = #{t_ID}
-  </select>
+  </select> -->
   <sql id="Base_Column_List">
     t_ID, t_Name, t_parentID, t_Description
   </sql>

@@ -1,5 +1,6 @@
 package com.controller;
 
+import java.io.PrintWriter;
 import java.util.Date;
 import java.util.List;
 
@@ -15,6 +16,7 @@ import com.entity.Brand;
 import com.entity.E;
 import com.entity.Orders;
 import com.entity.Ordersdetails;
+import com.entity.SubType;
 import com.entity.Types;
 import com.junit.PageTool;
 import com.service.BrandService;
@@ -53,7 +55,8 @@ public class TypesController {
 	
 	@RequestMapping("/getShop.htm")
 	public String getShop(Integer id,Model model) {
-		List<Types> shop = typesService.getShop(12);
+
+		List<SubType> shop = typesService.getShop1(id);
 		model.addAttribute("shop", shop);
 		return "h/product_Manage";
 	}

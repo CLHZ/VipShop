@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.entity.SubType;
 import com.entity.Types;
 import com.mapper.TypesMapper;
 import com.service.TypesService;
@@ -29,6 +30,12 @@ public class TypeServiceImpl implements TypesService {
 	public List<Types> getShop(Integer id) {
 		// TODO Auto-generated method stub
 		return typesMapper.getShop(id);
+	}
+
+	@Override
+	public List<SubType> getShop1(Integer id) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

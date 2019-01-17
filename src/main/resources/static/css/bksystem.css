@@ -1057,3 +1057,5 @@ select, textarea, input[type="text"], input[type="password"], input[type="dateti
 /*********************/
 .Promp_plate{border-radius: 3px; padding: 10px 15px; padding-right: 40px; position: relative;}
 .Promp_plate .PrompClose{position: absolute; right:10px;font-size: 13px;cursor: pointer;}
+
+.previous{margin-bottom: 1000px;}
