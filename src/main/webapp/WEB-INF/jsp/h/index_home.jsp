@@ -37,7 +37,7 @@
 									<div class="left_shop">
 										<div class="left_shop_logo">
 											<div class="shop_logo"><img src="" onerror="this.src='images/noimage.jpg',this.onerror=null"></div>
-											<a href="#" class="btn bg-deep-blue padding5">进入首页</a>
+											<a href="czj/getHead" class="btn bg-deep-blue padding5">进入首页</a>
 										</div>
 										<div class="Shops_content">
 											<p><label class="name">商城名称：</label>唯品会</p>

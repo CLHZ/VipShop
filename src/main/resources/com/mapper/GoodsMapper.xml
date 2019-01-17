@@ -24,6 +24,19 @@
     from goods
     where g_ID = #{g_ID,jdbcType=INTEGER}
   </select>
+  <select id="getGoodsByName" parameterType="com.entity.Goods" resultMap="BaseResultMap">
+      select g_ID,g_Name,g_Price,g_Discount,g_Image from goods where 
+      <if test="g_Name != ''">
+      g_Name like CONCAT('%',#{g_Name},'%'), 
+      </if>
+      <if test="g_BID != 0">
+        g_BID = #{g_BID}
+      </if>
+  </select>
+  <select id="getGoodsByGid" resultMap="BaseResultMap">
+      select g.g_ID,g.g_Name,g.g_Discount,g.g_Image,g.g_Price,g.g_Number,b.b_Name,g.g_BID,g.g_Description 
+      from goods as g,brand as b where  b.b_ID=#{b_Id} and g.g_ID=#{g_ID}
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from goods
     where g_ID = #{g_ID,jdbcType=INTEGER}

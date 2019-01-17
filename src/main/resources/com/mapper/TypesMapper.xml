@@ -11,16 +11,12 @@
      <result column="t_Name1" jdbcType="VARCHAR" property="t_Name" />
      <result column="t_parentID1" jdbcType="INTEGER" property="t_parentID" />
     </collection>
-<!--      <collection property="goods" ofType="com.entity.Goods">
-    	<id column="g_ID" jdbcType="INTEGER" property="g_ID" />
-    	<result column="g_Name" jdbcType="VARCHAR" property="g_Name"/>
-    	<result column="t_ID" jdbcType="VARCHAR" property="t_ID"/>
-    	<result column="g_Price" jdbcType="VARCHAR" property="g_Price"/>
-    	<result column="g_Status" jdbcType="VARCHAR" property="g_Status"/>
-    	<result column="g_Price" jdbcType="VARCHAR" property="g_Price"/>
-    	<result column="g_Discount" jdbcType="VARCHAR" property="g_Discount"/>
-   	  </collection> -->
-
+    
+      <collection property="table1" ofType="com.entity.SubType">
+    <id column="t_ID1" jdbcType="INTEGER" property="t_ID" />
+     <result column="t_Name1" jdbcType="VARCHAR" property="t_Name" />
+     <result column="t_parentID1" jdbcType="INTEGER" property="t_parentID" />
+    </collection>
   </resultMap>
   
   <select id="getTypesByID" resultMap="BaseResultMap" >

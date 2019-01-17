@@ -14,16 +14,15 @@
     font-style: normal;
     display: inline-block;
     *display: inline;
-    *zoom: 1
+    *zoom: 1;
 }
 
 .header li {
-    list-style: none
+    list-style: none;
 }
 
 .header a {
-    text-decoration: none;
-    vertical-align: top
+    text-decoration: none; /* vertical-align:top; */
 }
 
 .header img {
@@ -44,7 +43,7 @@
     vertical-align: middle;
     border-width: 4px;
     border-color: #999 transparent transparent transparent;
-    border-style: solid dashed dotted dashed
+    border-style: solid dashed dotted dashed;
 }
 
 .vip-common-header {
@@ -175,7 +174,7 @@
 }
 
 .top-nav-tool a {
-    color: #666
+    color: #666;
 }
 
 .top-nav-tool a:hover {
@@ -391,7 +390,6 @@
 .wp-sign {
     position: relative;
     z-index: 11;
-    width: 66px;
     height: 26px;
     text-align: center;
     padding-left: 10px;
@@ -468,6 +466,7 @@
     display: block
 }
 
+
 .wp-service {
     _padding-top: 10px;
     z-index: 11;
@@ -475,26 +474,27 @@
     padding-left: 13px;
     padding-right: 20px;
     height: 26px;
-    text-align: left
+    text-align: left;
 }
 
 .wp-service .service-in {
     position: absolute;
-    z-index: 23
+    z-index: 23;
 }
 
 .wp-service .ico-arw-bodder {
-    width: 109px;
+    width: 110px;
     left: -1px;
     background-color: #fff;
     height: 27px;
     top: -27px;
     border-left: 1px solid #cdcdcd;
-    border-top: 1px solid #cdcdcd
+    border-top: 1px solid #cdcdcd;
+    border-right: 1px solid #cdcdcd;
 }
 
 .wp-service .service-infor {
-    width: 99px;
+    width: 100px;
     text-align: left;
     top: 25px;
     left: -7px;
@@ -507,16 +507,16 @@
 
 .wp-fav-nav {
     padding-left: 13px;
-    width: 60px;
+    width: 56px;
     padding-right: 20px;
     height: 26px
 }
 
 .wp-fav-nav .ico-arw-bodder {
-    width: 99px;
+    width: 95px;
     left: -1px;
     background-color: #fff;
-    height: 27px;
+    height: 26px;
     top: -27px;
     border-left: 1px solid #cdcdcd;
     border-top: 1px solid #cdcdcd
@@ -529,24 +529,24 @@
 }
 
 .wp-member {
-    width: 72px;
+    width: 66px;
     padding-left: 13px;
     padding-right: 20px;
     height: 26px
 }
 
 .wp-member .ico-arw-bodder {
-    width: 111px;
+    width: 105px;
     left: -1px;
     background-color: #fff;
     height: 27px;
     top: -27px;
     border-left: 1px solid #cdcdcd;
-    border-top: 1px solid #cdcdcd
+    border-top: 1px solid #cdcdcd;
 }
 
 .wp-member .service-infor {
-    width: 101px;
+    width: 95px;
     top: 25px;
     left: -7px
 }
@@ -577,7 +577,7 @@
     height: 14px;
     margin-left: 1px;
     margin-right: 3px;
-    margin-top: -3px;
+    margin-top: 7px;
     vertical-align: middle
 }
 
@@ -756,7 +756,7 @@
 }
 
 .c-search-input {
-    padding: 2px 12px;
+    padding: 16px 12px;
     *margin-top: -1px;
     width: 311px;
     height: 28px;
@@ -782,9 +782,9 @@
     position: absolute;
     top: 0;
     right: 0;
-    padding-top: 6px;
+    padding-top: 5px;
     width: 53px;
-    height: 26px;
+    height: 28px;
     text-align: center;
     background-color: #fa2a83;
     border-top-right-radius: 0;
@@ -942,11 +942,11 @@
     _width: 80px;
     _padding: 0;
     font-size: 16px;
-    white-space: nowrap
+    white-space: nowrap;
 }
 
 .main-nav-link li .main-nav-atag:hover {
-    color: #f10180
+    color: #f10180;
 }
 
 .main-nav-link li .main-nav-atag .link-front-icon, .main-nav-link li .main-nav-atag img {
@@ -958,7 +958,7 @@
 .main-nav-link li .main-nav-atag.nav_current {
     cursor: default;
     font-weight: 700;
-    color: #f10180
+    color: #f10180;
 }
 
 .main-nav-link .more-wrap {
@@ -1575,7 +1575,7 @@
     background: #fff;
     position: absolute;
     height: 3px;
-    top: -3px
+    top: -3px;
 }
 
 .wp-service .service-in:hover {
@@ -1590,7 +1590,7 @@
 }
 
 .wp-service .wp-service-hover .ico-arw-bodder, .wp-service:hover .ico-arw-bodder {
-    display: block
+    display: block;
 }
 
 .wp-service .wp-service-hover .ico-dis, .wp-service:hover .ico-dis {
@@ -2281,7 +2281,7 @@
     position: absolute;
     right: 0;
     top: 44px;
-    z-index: 11
+    z-index: 0;
 }
 
 .head-cart-inner, .tool-cn-inner {
@@ -2617,7 +2617,7 @@
     border-bottom-color: #fff
 }
 
-.head-cart-hover .tool-cn, .head-cart-mouseon .tool-cn {
+.head-cart-hover .tool-cn, .head-cart-mouseon .tool-cn :hover{
     display: block
 }
 
@@ -2652,7 +2652,7 @@
 }
 
 .main-nav-link .more-wrap a i {
-    width: 13px
+    width: 13px;
 }
 
 .main-nav-link .more-wrap:hover {
@@ -2727,7 +2727,8 @@
 .nav-category-data .cate-menu .cate-menu-item:hover {
     background-color: #fff;
     color: #f10180;
-    cursor: pointer
+    cursor: pointer;
+    display: block;
 }
 
 .nav-category-data .cate-menu .cate-menu-item .menu-item-tit {
@@ -2849,21 +2850,8 @@
     display: none
 }
 
-.nav-cate-fail-load .nav-cate-data-error {
-    display: block
-}
-
 .nav-cate-fail-load .cate-part-col1, .nav-cate-fail-load .cate-part-col2 {
     display: none
-}
-
-.nav-cate-data-loading {
-    display: none;
-    top: 50%;
-    left: 50%;
-    position: absolute;
-    margin-left: -16px;
-    margin-top: -20px
 }
 
 .nav-cate-data-error {
@@ -3140,7 +3128,7 @@
 }
 
 .f-hide, .hidden {
-    display: none
+    display: none;
 }
 
 @media screen and (min-width: 1441px) {
@@ -3151,4 +3139,56 @@
     .top-notice-content {
         width: 1170px
     }
+}
+
+.slide1 {
+    background-image: url("/czjimg/1.jpg");
+}
+.slide2 {
+    background-image: url("/czjimg/2.jpg");
+}
+.slide3 {
+    background-image: url("/czjimg/3.jpg");
+}
+
+
+.main {
+    width: 1200px;
+    height: auto;
+    margin: auto;
+    overflow: hidden;
+}
+ 
+/* .nav {
+    width: 1200px;
+    height: 40px;
+}
+ 
+
+.change-li {
+    float: left;
+    width: 25%;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+} */
+ 
+.changeColor {
+    color:#f10180
+}
+ 
+.banner {
+	padding: 48px 40px 28px 40px;
+    width: auto;
+    height: 410px;
+    overflow: hidden;
+}
+ 
+.banner-slide {
+	background-color: white;
+    width: 1116px;
+    height: 390px;
+    background-repeat: no-repeat;
+    position: absolute;
+    box-shadow: 0 1px 3px #262626;
 }

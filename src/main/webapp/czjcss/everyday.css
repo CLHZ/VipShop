@@ -1,0 +1,140 @@
+@charset "UTF-8";
+
+.index-cms[data-from-cmsid=teRankings-pc] {
+	background-color: #fff
+}
+
+.index-cms[data-from-cmsid=teRankings-pc]+.index-cms[data-from-cmsid=teNewCustomer-pc]
+	{
+	margin-top: 20px
+}
+
+.column-operation {
+	margin: 0 auto;
+	overflow: hidden;
+	display: none
+}
+
+.column-operation, .column-operation-title {
+	width: 1000px
+}
+
+.column-operation-item, .column-operation-title {
+	margin: 0 20px 20px 0
+}
+
+.column-operation-item-3 {
+	margin-bottom: 23px
+}
+
+.column-operation-con {
+	width: 1020px
+}
+
+.column-operation-item {
+	float: left;
+	position: relative;
+	overflow: hidden
+}
+
+.column-operation img {
+	width: 100%
+}
+
+.column-operation-item-0, .column-operation-item-1,
+	.column-operation-item-2 {
+	width: 208px;
+	height: 199px
+}
+
+.column-operation-item-3, .column-operation-item-4 {
+	width: 316px;
+	height: 88px
+}
+
+.column-operation-item-5 {
+	width: 1000px
+}
+
+a.column-operation-item::before {
+	opacity: 0;
+	content: "";
+	width: 80px;
+	height: 100%;
+	overflow: hidden;
+	-webkit-transform: skewX(-25deg);
+	transform: skewX(-25deg);
+	position: absolute;
+	top: 0;
+	left: -150px;
+	background: linear-gradient(to right, rgba(255, 255, 255, 0) 0,
+		rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, 0) 100%)
+}
+
+a.column-operation-title::after, a.column-operation-title::before {
+	left: 50%;
+	margin-left: -40px
+}
+
+a.column-operation-item:hover::before, a.column-operation-title:hover::after
+	{
+	-webkit-animation: light 1s ease-out;
+	animation: light 1s ease-out
+}
+
+a.column-operation-title:hover::before {
+	-webkit-animation-name: light2;
+	animation-name: light2
+}
+
+@
+-webkit-keyframes light { 100%{
+	opacity: 1;
+	left: 125%
+}
+
+}
+@
+keyframes light { 100%{
+	opacity: 1;
+	left: 125%
+}
+
+}
+@
+-webkit-keyframes light2 { 100%{
+	opacity: 1;
+	left: -150px
+}
+
+}
+@
+keyframes light2 { 100%{
+	opacity: 1;
+	left: -150px
+}
+
+}
+@media screen and (min-width:1441px) {
+	.column-operation, .column-operation-title {
+		width: 1170px
+	}
+	.column-operation-con {
+		width: 1200px
+	}
+	.column-operation-item {
+		margin: 0 30px 30px 0
+	}
+	.column-operation-item-0, .column-operation-item-1,
+		.column-operation-item-2 {
+		width: 240px;
+		height: 230px
+	}
+	.column-operation-item-3, .column-operation-item-4 {
+		width: 360px;
+		height: 100px
+	}
+	.column-operation-item-5 {
+		width: 1170px
+	}
+}

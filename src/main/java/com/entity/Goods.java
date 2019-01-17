@@ -1,6 +1,7 @@
 package com.entity;
 
 import java.util.Date;
+import java.util.List;
 
 public class Goods {
     private Integer g_ID;
@@ -24,8 +25,18 @@ public class Goods {
     private String g_Description;
 
     private String g_BID;
+    
+    private Brand brand;
+    
+    public Brand getBrand() {
+		return brand;
+	}
 
-    public Integer getG_ID() {
+	public void setBrand(Brand brand) {
+		this.brand = brand;
+	}
+
+	public Integer getG_ID() {
         return g_ID;
     }
 

@@ -15,6 +15,11 @@ public class TypeServiceImpl implements TypesService {
 
 	@Autowired
 	private TypesMapper typesMapper;
+
+	@Override
+	public List<Types> getCateItem() {
+		return typesMapper.getCateItem();
+	}
 	
 	@Override
 	public List<Types> getTypesByID() {
@@ -22,8 +27,15 @@ public class TypeServiceImpl implements TypesService {
 		return typesMapper.getTypesByID();
 	}
 	@Override
-	public List<SubType> getShop(Integer id) {
+	public List<Types> getShop(Integer id) {
+		// TODO Auto-generated method stub
 		return typesMapper.getShop(id);
+	}
+
+	@Override
+	public List<SubType> getShop1(Integer id) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

@@ -22,10 +22,16 @@ public interface TypesMapper {
     int updateByPrimaryKeySelective(Types record);
 
     int updateByPrimaryKey(Types record);
+    
+    @Select("select t_ID, t_Name, t_parentID, t_Description from types")
+    List<Types> getCateItem();
+    
     //栏目分类
     List<Types> getTypesByID();
     
     //根据分类id查找商品
     @Select("SELECT p.t_Name,p.t_ID,g.g_Name,g.g_Status,g.g_Price,g.g_Discount FROM `types` AS p INNER JOIN goods AS g ON g.t_ID = p.t_ID WHERE p.t_parentID = #{t_ID}")
-    List<SubType> getShop(@Param("t_ID") Integer t_ID);
+    List<SubType> getShop1(@Param("t_ID") Integer t_ID);
+    
+    List<Types> getShop(@Param("id") Integer id);
 }

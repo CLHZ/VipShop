@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mapper.OrdersdetailsMapper">
+  <resultMap id="BaseResultMap" type="com.entity.Ordersdetails">
+    <id column="d_ID" jdbcType="INTEGER" property="d_ID" />
+    <result column="o_ID" jdbcType="CHAR" property="o_ID" />
+    <result column="g_ID" jdbcType="CHAR" property="g_ID" />
+    <result column="d_Price" jdbcType="REAL" property="d_Price" />
+    <result column="d_Number" jdbcType="INTEGER" property="d_Number" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    d_ID, o_ID, g_ID, d_Price, d_Number
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from ordersdetails
+    where d_ID = #{d_ID,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from ordersdetails
+    where d_ID = #{d_ID,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.entity.Ordersdetails">
+    insert into ordersdetails (d_ID, o_ID, g_ID, d_Price, 
+      d_Number)
+    values (#{d_ID,jdbcType=INTEGER}, #{o_ID,jdbcType=CHAR}, #{g_ID,jdbcType=CHAR}, #{d_Price,jdbcType=REAL}, 
+      #{d_Number,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.entity.Ordersdetails">
+    insert into ordersdetails
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="d_ID != null">
+        d_ID,
+      </if>
+      <if test="o_ID != null">
+        o_ID,
+      </if>
+      <if test="g_ID != null">
+        g_ID,
+      </if>
+      <if test="d_Price != null">
+        d_Price,
+      </if>
+      <if test="d_Number != null">
+        d_Number,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="d_ID != null">
+        #{d_ID,jdbcType=INTEGER},
+      </if>
+      <if test="o_ID != null">
+        #{o_ID,jdbcType=CHAR},
+      </if>
+      <if test="g_ID != null">
+        #{g_ID,jdbcType=CHAR},
+      </if>
+      <if test="d_Price != null">
+        #{d_Price,jdbcType=REAL},
+      </if>
+      <if test="d_Number != null">
+        #{d_Number,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.entity.Ordersdetails">
+    update ordersdetails
+    <set>
+      <if test="o_ID != null">
+        o_ID = #{o_ID,jdbcType=CHAR},
+      </if>
+      <if test="g_ID != null">
+        g_ID = #{g_ID,jdbcType=CHAR},
+      </if>
+      <if test="d_Price != null">
+        d_Price = #{d_Price,jdbcType=REAL},
+      </if>
+      <if test="d_Number != null">
+        d_Number = #{d_Number,jdbcType=INTEGER},
+      </if>
+    </set>
+    where d_ID = #{d_ID,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.entity.Ordersdetails">
+    update ordersdetails
+    set o_ID = #{o_ID,jdbcType=CHAR},
+      g_ID = #{g_ID,jdbcType=CHAR},
+      d_Price = #{d_Price,jdbcType=REAL},
+      d_Number = #{d_Number,jdbcType=INTEGER}
+    where d_ID = #{d_ID,jdbcType=INTEGER}
+  </update>
+</mapper>
