@@ -32,6 +32,16 @@
     from brand
     where b_ID = #{b_ID,jdbcType=VARCHAR}
   </select>
+  
+  <select id="searchBrand" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from brand
+    <if test="b_Name != null">
+    where b_Name like CONCAT('%',#{b_Name,jdbcType=VARCHAR},'%')
+    </if>
+  </select>
+  
   <select id="getGoodsByGid" resultMap="BaseResultMap">
       select g.g_ID,g.g_Name,g.g_Discount,g.g_Image,g.g_Price,g.g_Number,b.b_Name,g.g_BID,g.g_Description from 
       goods as g,brand as b where  b.b_ID=#{b_Id} and g.g_ID=#{g_ID}

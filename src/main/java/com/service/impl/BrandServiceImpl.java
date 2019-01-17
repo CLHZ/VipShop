@@ -27,4 +27,14 @@ public class BrandServiceImpl implements BrandService {
 		return brandMapper.getGoodsByGid(g_ID, b_Id);
 	}
 
+	@Override
+	public int deleteByPrimaryKey(String b_ID) {
+		return brandMapper.deleteByPrimaryKey(b_ID);
+	}
+
+	@Override
+	public List<Brand> searchBrand(String b_Name) {
+		return brandMapper.searchBrand(b_Name);
+	}
+
 }

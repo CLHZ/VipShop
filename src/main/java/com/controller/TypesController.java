@@ -20,6 +20,7 @@ import com.junit.PageTool;
 import com.service.BrandService;
 import com.service.OrdersService;
 import com.service.OrdersdetailsService;
+import com.service.BrandService;
 import com.service.TypesService;
 
 @Controller
@@ -33,6 +34,7 @@ public class TypesController {
 	
 	@Autowired
 	private OrdersService ordersService;
+	private BrandService brandService;
 	
 	/**
 	 * 一级菜单
@@ -50,7 +52,6 @@ public class TypesController {
 	@RequestMapping("/getShop.htm")
 	public String getShop(Integer id,Model model) {
 		List<Types> shop = typesService.getShop(12);
-		System.out.println(shop);
 		model.addAttribute("shop", shop);
 		return "h/product_Manage";
 	}
@@ -150,5 +151,29 @@ public class TypesController {
     	System.out.println(d_State);
     	
     	return ordersdetailsService.getOrdersdetailsStatus(d_State);
+    }
+    @RequestMapping("/brandmanage.htm")
+    @ResponseBody
+    public List<Brand> getBrand(){
+        return brandService.getBrand();
+    }
+    
+    @RequestMapping("/deleteBrand.htm")
+    public void deleteBrand(String[] id){
+    	/*if(id[0].equals("deleteAll")) {
+    		brandService.
+    	}*/
+    	for (int i = 0; i < id.length; i++) {
+    		brandService.deleteByPrimaryKey(id[i]);    		
+		}
+    }
+    
+    @RequestMapping("/searchBrand.htm")
+    @ResponseBody
+    public List<Brand> searchBrand(String brandname) {
+    	if(brandname == "") {
+    		brandname = null;
+    	}
+    	return brandService.searchBrand(brandname);
     }
 }
