@@ -1,5 +1,6 @@
 package com.controller;
 
+import java.io.PrintWriter;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,10 +33,13 @@ public class TypesController {
 	
 	@RequestMapping("/getShop.htm")
 	public String getShop(Integer id,Model model) {
-		List<Types> shop = typesService.getShop(12);
-		System.out.println(shop);
-		model.addAttribute("shop", shop);
-		return "h/product_Manage";
+		
+		model.addAttribute("types", typesService.getShop(id));
+		return "h/product2";
+		
+		
+		/*model.addAttribute("shop", shop);
+		return "h/product2";*/
 	}
 	
 	@RequestMapping("/login.htm")

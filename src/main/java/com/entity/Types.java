@@ -15,7 +15,10 @@ public class Types {
     
     private List<Goods> goods;
 
-    public List<Goods> getGoods() {
+   
+   
+
+	public List<Goods> getGoods() {
 		return goods;
 	}
 
