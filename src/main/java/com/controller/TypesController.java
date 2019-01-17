@@ -55,10 +55,9 @@ public class TypesController {
 	
 	@RequestMapping("/getShop.htm")
 	public String getShop(Integer id,Model model) {
-
-		List<SubType> shop = typesService.getShop1(id);
+		List<SubType> shop = typesService.getShop(id);
 		model.addAttribute("shop", shop);
-		return "h/product_Manage";
+		return "h/product2";
 	}
 	
 	@RequestMapping("/login.htm")

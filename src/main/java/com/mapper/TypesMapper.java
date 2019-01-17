@@ -33,5 +33,6 @@ public interface TypesMapper {
     @Select("SELECT p.t_Name,p.t_ID,g.g_Name,g.g_Status,g.g_Price,g.g_Discount FROM `types` AS p INNER JOIN goods AS g ON g.t_ID = p.t_ID WHERE p.t_parentID = #{t_ID}")
     List<SubType> getShop1(@Param("t_ID") Integer t_ID);
     
-    List<Types> getShop(@Param("id") Integer id);
+    @Select("SELECT p.t_Name,p.t_ID,g.g_Name,g.g_Status,g.g_Price,g.g_Discount FROM `types` AS p INNER JOIN goods AS g ON g.t_ID = p.t_ID WHERE p.t_parentID = #{t_ID}")
+    List<SubType> getShop(@Param("t_ID") Integer id);
 }

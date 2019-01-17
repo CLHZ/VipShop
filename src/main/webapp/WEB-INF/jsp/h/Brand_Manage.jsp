@@ -25,7 +25,6 @@
 				width: 240px;
 			}
 			
-			
 			.brandimg{
 				height: 140px;
 				width: 240px;
@@ -51,7 +50,6 @@
 									type:"post",
 									url:"brandmanage.htm",
 									success:function(data){
-										console.log(data);
 										var html = "";	
 										var list = "<table>";
 										var dy = 0;
@@ -165,7 +163,7 @@
 						<td>状态：</td>
 						<td>
 							<select class="publish" name="publish">
-								<option selected="selected">发布</option>
+								<option>发布</option>
 								<option>下架</option>
 							</select>
 						</td>
@@ -187,6 +185,8 @@
 		var fil;  
 		$(".bg-deep-blue").click(function(){
 			$(".bname").val("");
+			$(".discount").val("");
+			
 			$(".modal-title").text("品牌添加");
 			$('.showimg').text("图片预览区");
 			$("#submit").text("添加");

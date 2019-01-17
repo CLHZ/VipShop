@@ -27,7 +27,7 @@ public class TypeServiceImpl implements TypesService {
 		return typesMapper.getTypesByID();
 	}
 	@Override
-	public List<Types> getShop(Integer id) {
+	public List<SubType> getShop(Integer id) {
 		// TODO Auto-generated method stub
 		return typesMapper.getShop(id);
 	}

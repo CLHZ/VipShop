@@ -14,5 +14,5 @@ public interface TypesService {
 	
 	List<SubType> getShop1(Integer id);
 	
-	List<Types> getShop(Integer id);
+	List<SubType> getShop(Integer id);
 }

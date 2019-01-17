@@ -40,7 +40,7 @@
 		       </tr>
 		       </thead>
 		       <tbody>
-		       <c:forEach items="${types}" var="s">
+		       <c:forEach items="${shop}" var="s">
            		<tr>
            		<td><label><input id="${s.t_ID}" type="checkbox" class="ace" name="sub"><span class="lbl"></span></label></td>
            		<td>${s.t_Name}</td>

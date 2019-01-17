@@ -38,7 +38,7 @@
 							 		<dt style="color: #FF6868;">${ptype.t_Name}</dt>
 							 			<c:forEach items="${ptype.table1}" var="stype">
 							     	<dd id="${stype.t_ID}">
-							     	<a target="pollmain" href="getShop.htm?id=${stype.t_ID}">
+							     	<a target="pollmain" href="${pageContext.request.contextPath }getShop.htm?id=${stype.t_ID}">
 							     	${stype.t_Name}
 							     	</a>
 							     	</dd>
