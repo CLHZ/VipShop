@@ -578,6 +578,7 @@ select, textarea, input[type="text"], input[type="password"], input[type="dateti
     background: #DDDDDD!important;
 	border-color: #DEDEDE
 }
+
 .hover-deep-white:hover, .bg-deep-white{
 	color: #66666;
     background: #ffffff!important;

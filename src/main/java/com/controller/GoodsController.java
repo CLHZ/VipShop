@@ -30,10 +30,6 @@ public class GoodsController {
 		String itemI = item+","+name;
 		String[] itemi = itemI.split(",");
 		model.addAttribute("itemi", itemi);
-		for (int i = 0; i < itemi.length; i++) {
-			System.out.println(itemi[i]);
-		}
-		
 		List<Goods> goodsNameById = goodsService.getGoodsNameById(id, name);
     	List<Brand> brand = brandService.getBrand();
     	if(currentPageNo == null) {

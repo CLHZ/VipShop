@@ -8,7 +8,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.entity.Brand;
 import com.entity.Types;
+import com.service.BrandService;
 import com.service.TypesService;
 
 @Controller
@@ -16,6 +18,9 @@ public class TypesController {
 
 	@Autowired
 	private TypesService typesService;
+	
+	@Autowired
+	private BrandService brandService;
 	
 	/**
 	 * 一级菜单
@@ -33,7 +38,6 @@ public class TypesController {
 	@RequestMapping("/getShop.htm")
 	public String getShop(Integer id,Model model) {
 		List<Types> shop = typesService.getShop(12);
-		System.out.println(shop);
 		model.addAttribute("shop", shop);
 		return "h/product_Manage";
 	}
@@ -73,5 +77,30 @@ public class TypesController {
     @RequestMapping("/order.htm")
     public String order(){
         return "h/order";
+    }
+    
+    @RequestMapping("/brandmanage.htm")
+    @ResponseBody
+    public List<Brand> getBrand(){
+        return brandService.getBrand();
+    }
+    
+    @RequestMapping("/deleteBrand.htm")
+    public void deleteBrand(String[] id){
+    	/*if(id[0].equals("deleteAll")) {
+    		brandService.
+    	}*/
+    	for (int i = 0; i < id.length; i++) {
+    		brandService.deleteByPrimaryKey(id[i]);    		
+		}
+    }
+    
+    @RequestMapping("/searchBrand.htm")
+    @ResponseBody
+    public List<Brand> searchBrand(String brandname) {
+    	if(brandname == "") {
+    		brandname = null;
+    	}
+    	return brandService.searchBrand(brandname);
     }
 }

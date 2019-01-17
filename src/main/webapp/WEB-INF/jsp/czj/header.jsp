@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
 <html>
 <head>
-<title>头部</title>
+<title>VIP唯品会</title>
 <link href="${pageContext.request.contextPath}/czjcss/headcom.css" rel="stylesheet" type="text/css">
 <link href="${pageContext.request.contextPath}/czjcss/mst.css" rel="stylesheet" type="text/css">
 <link href="${pageContext.request.contextPath}/czjcss/common-hash.css" rel="stylesheet" type="text/css">
@@ -67,7 +67,6 @@
 				$.ajax({
 					type : "post",
 					url : "getcateitem.htm",
-					aynsc : true,
 					data : {"id":id},
 					success : function(data){
 						for(var i = 0; i < data.length; i++){
@@ -89,7 +88,6 @@
 				});
 			};
 		}
-		
 	});
 	
 </script>
